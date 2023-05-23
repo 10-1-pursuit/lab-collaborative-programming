@@ -23,12 +23,16 @@ function sortByStringLength(arrOfWords) {
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
 function textScroller(word) {
+  if (word === "") {
+    return []
+  };
   const arrOfSameWord = [];
-  for (let i = word.length; i > word.length; i--) {
-    const scrolledWord = word.slice(i) + word.slice(0, i);
+  for (let i = 0; i < word.length; i++) {
+    const scrolledWord = word.slice(i) + word.slice(0, i); // Create a scrolled word by slicing the OG word & chaining ⛓️ the sliced parts.
     arrOfSameWord.push(scrolledWord);
   };
-  //console.log(arrOfSameWord)
+  arrOfSameWord.shift()  // Noticed that "Aloha" was 1st in array. Test wanted it last so shift removes the first index
+  arrOfSameWord.push(word) // And then i added the original word to the end.
   return arrOfSameWord
 };
 
