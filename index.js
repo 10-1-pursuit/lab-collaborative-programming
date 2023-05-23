@@ -32,8 +32,22 @@ function sortByStringLength(words) {
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller() {}
 
+// Plan:
+
+// Goal: After getting an inputted `string`, go through the string character by character, and create an array where first the element is the string itself, then a new string is made from all the same characters but starting with each subsequent charcter and filling it in in that order but with the subsequent character being the first character in the new string. Finally, return the array.
+
+// Steps:
+// 1. Iterate over the entire inputted `word` string.
+// 2. Create a new array to hold all the new strings.
+// 3. Use the `.slice()` method and a template literal or string concatenation to make the new strings.
+// 4. Keep slice original string with subsequent iterations of the next character becoming the first character.
+// 5. Push each new string into the array.
+// 6. Return the new array.
+
+function textScroller(word) {}
+const testWord = 'chookie';
+console.log(textScroller(testWord));
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
