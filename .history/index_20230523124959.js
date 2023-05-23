@@ -5,11 +5,16 @@ const morseCodeDictionary = require("./morse-code-dictionary.json");
  * @param {String[]}  - An array of strings.
  * @returns {string[]} An array of strings.
  */
-function sortByStringLength(array) {
-  if (array !== array.every((element) => typeof element === "string")) {
-    return array;
+function sortByStringLength(obj) {
+
+  for (const code in obj) {
+    const size = str.length.
   }
-  return array.sort((a, b) => a.length - b.length);
+  // str.reduce((prev, curr) => {
+    // const lengthSize = str.length;
+    // 
+  // },[])
+  return []
 }
 
 /**
@@ -19,38 +24,14 @@ function sortByStringLength(array) {
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller(word) {
-  if (word.length === 0) {
-    return [];
-  }
-  const arr = [];
-  const size = word.length;
-
-  for (let i = 1; i <= size; i++) {
-    const newWord = word.slice(i) + word.slice(0, i);
-    arr.push(newWord);
-  }
-
-  return arr;
-}
+function textScroller() {}
 
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
  */
-function betweenExtremes(array) {
-  if (array.length === 0) {
-    return [];
-  }
-
-  if (!array.every((num) => typeof num === "number")) {
-    return array;
-  }
-
-  const difference = Math.max(...array) - Math.min(...array);
-  return difference;
-}
+function betweenExtremes() {}
 
 /**
  * Returns the difference between the largest and smallest number in the array
