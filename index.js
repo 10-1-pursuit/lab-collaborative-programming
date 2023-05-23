@@ -12,7 +12,6 @@ for(words of arrOfWords){
  }
 }
 let sortedStringLength = arrOfWords.sort((a,b) => a.length - b.length)
-console.log(sortedStringLength)
 return sortedStringLength
 }
 
@@ -23,14 +22,34 @@ return sortedStringLength
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller() {}
+function textScroller(word) {
+const arrOfSameWord=[];
+for(let i = word.length; i > word.length; i--){
+const scrolledWord = word.slice(i) + word.slice(0,i);
+arrOfSameWord.push(scrolledWord);
+}
+console.log(arrOfSameWord)
+return arrOfSameWord
+}
 
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
  */
-function betweenExtremes() {}
+function betweenExtremes(numbersArr) {
+  const HigestNum = Math.max(...numbersArr)
+  const LowestNum = Math.min(...numbersArr)
+  if (numbersArr === "") {
+    return [];
+  } for (let nums of numbersArr) {
+    if (typeof nums != "number") {
+      return numbersArr;
+    };
+  };
+  return HigestNum - LowestNum
+};
+
 
 /**
  * Returns the difference between the largest and smallest number in the array
@@ -40,7 +59,10 @@ function betweenExtremes() {}
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+
+  
+}
 
 module.exports = {
   sortByStringLength,
