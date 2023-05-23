@@ -60,7 +60,16 @@ function betweenExtremes(array) {
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(msg, dic) {
+  const allChar = msg.toUpperCase().split("");
+
+  return allChar.reduce((morseCode, char) => {
+    const charCode = char !== " " ? dic[char] + " " : "";
+    return morseCode + charCode;
+  }, "").slice(0, -1);
+}
+
+//console.log(morseCodeTranslator("HELLO WORLD", morseCodeDictionary));
 
 module.exports = {
   sortByStringLength,
