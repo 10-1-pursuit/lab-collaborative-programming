@@ -25,8 +25,19 @@ function sortByStringLength(string) {
  * @returns {string[]} An array of strings
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
+ *
+ * let returnedArr = [];
+ *
+ *
  */
-function textScroller(word) {}
+function textScroller(word) {
+  let targetWord = "Hello";
+
+  if (word === targetWord) {
+    return targetWord;
+  }
+}
+//if it says "hello", sort a = b, do nothing return 0. TargetWord "Hello"
 
 /**
  * Returns the difference between the largest and smallest number in the array
