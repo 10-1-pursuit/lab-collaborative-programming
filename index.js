@@ -1,11 +1,29 @@
-const morseCodeDictionary = require("./morse-code-dictionary.json");
+const morseCodeDictionary = require('./morse-code-dictionary.json');
 
 /**
  * Returns an array of all of the words sorted by length, shortest first
  * @param {String[]}  - An array of strings.
  * @returns {string[]} An array of strings.
  */
-function sortByStringLength() {}
+function sortByStringLength(words) {
+	for (const word of words) {
+		if (typeof word !== 'string') {
+			return words;
+		}
+	}
+
+	const sortedWords = words.sort((a, b) => {
+		if (a.length < b.length) {
+			return -1;
+		} else if (a.length > b.length) {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
+
+	return sortedWords;
+}
 
 /**
  * Returns an array of the word in all scrolling positions.
@@ -34,8 +52,8 @@ function betweenExtremes() {}
 function morseCodeTranslator() {}
 
 module.exports = {
-  sortByStringLength,
-  textScroller,
-  betweenExtremes,
-  morseCodeTranslator,
+	sortByStringLength,
+	textScroller,
+	betweenExtremes,
+	morseCodeTranslator,
 };
