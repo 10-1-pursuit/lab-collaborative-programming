@@ -81,14 +81,34 @@ function betweenExtremes(numbers) {
 }
 
 /**
- * Returns the difference between the largest and smallest number in the array
+ * Returns a morse code message from an inputted string.
  * @param {String} message - A string to translate.
  * @param {Object[]} dictionary - A morse code dictionary ( use the one imported at the top of this file)
- * @returns {Number} The message in morse code
+ * @returns {String} The message in morse code
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+	let morseMessage = '';
+
+	for (let i = 0; i < message.length; i++) {
+		if (message[i] !== ' ') {
+			morseMessage += dictionary[message[i].toUpperCase()];
+			morseMessage += ' ';
+		}
+	}
+	// One solution with `.slice()`
+	// morseMessage = morseMessage.slice(0, -1);
+	// Another solution with `regex` and `.replace()`
+	/*  
+  4. Use the replace() Method -
+
+  The replace() function in javascript can also be used the remove the last character from the string. The replace() function takes second parameter as the whole string and the first parameter is for matching string and instructing the number of characters needed to be removed. The $ character is used to match the end of the input and the " . " (dot) is used to match the number of characters. To remove only one character from the end we will use only one " . " with the "$" and as we want to remove the character, we will use blank space " " as the replacement. The time complexity for this method is O(n), where "n" is the length of the substring.
+  Reference for solution -- by Ayush Sharma at https://www.scaler.com/topics/remove-last-character-from-string-javascript/
+  */
+	morseMessage = morseMessage.replace(/.$/, '');
+	return morseMessage;
+}
 
 module.exports = {
 	sortByStringLength,
