@@ -45,9 +45,26 @@ function sortByStringLength(words) {
 // 5. Push each new string into the array.
 // 6. Return the new array.
 
-function textScroller(word) {}
-const testWord = 'chookie';
-console.log(textScroller(testWord));
+function textScroller(word) {
+	// Create an empty array to hold varying position strings.
+	const scrollPositions = [];
+
+	// Guard clause: if inputted `word` string is empty, return an empty array.
+	if (word === '') {
+		return scrollPositions;
+	}
+
+	// Iterate over the inputted `word` string with a `for loop`. Start with index 1 and create a `substring`, starting with an incremented index on each iteration. Using a `template literal`, create a new string each time by concatenating a new slice of `word` each time starting from index 0 of `word` and ending at the current index, where the substring was started from.
+	for (let i = 1; i < word.length; i++) {
+		// Push each new formatted string into `scrollPositions` array.
+		scrollPositions.push(`${word.substring(i)}${word.slice(0, i)}`);
+	}
+	// Push the original `word` string into `scrollPositions` as the last element.
+	scrollPositions.push(word);
+	// Return `scrollPositions`.
+	return scrollPositions;
+}
+
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
