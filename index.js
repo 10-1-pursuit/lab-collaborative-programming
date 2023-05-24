@@ -29,14 +29,26 @@ function sortByStringLength(arrayOfStrings) {
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller() { }
+function textScroller() {
+  let emptyArr = [];
+
+}
 
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
  */
-function betweenExtremes() { }
+function betweenExtremes(numbers) {
+  // let tempArray = [];
+
+  const originalArr = numbers.every(() => { })
+
+  const diff = (numbers) => Math.max(...numbers) - Math.min(...numbers);
+
+
+  return diff(numbers);
+}
 
 /**
  * Returns the difference between the largest and smallest number in the array
