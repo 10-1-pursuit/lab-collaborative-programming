@@ -60,7 +60,19 @@ function betweenExtremes(numbers) {
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+  const translatedMessage = [];
+
+  for (let i = 0; i < message.length; i++) {
+    const morseCode = message[i].toUpperCase().split("");
+
+    const messageDictionaryCompared = dictionary[morseCode];
+    if (messageDictionaryCompared) {
+      translatedMessage.push(messageDictionaryCompared);
+    }
+  }
+  return translatedMessage.join(" ");
+}
 
 module.exports = {
   sortByStringLength,
