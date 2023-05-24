@@ -18,17 +18,18 @@ function sortByStringLength(string) {
  */
 
 function textScroller(word) {
-  let emptyArr = []; // Empty aarray created that will hold our finished array
+  let scrolledArr = [];
 
-  let splitWord = word.split(""); // each letter is converted into its own index element of an array
+  let wordArr = word.split("");
 
-  //splitWord.push(splitWord.shift());
-  {
-    splitWord.push(splitWord.shift());
-    emptyArr.push(array.join(""));
+  for (let i = 0; i < wordArr.length; i++) {
+    wordArr.push(wordArr.shift());
+
+    scrolledArr.push(wordArr.join(""));
   }
-  return emptyArr;
+  return scrolledArr;
 }
+
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
@@ -40,7 +41,7 @@ function betweenExtremes(numbers) {
   }
 
   for (let number of numbers) {
-    if (typeof number !== "numbers") {
+    if (typeof number !== "number") {
       return numbers;
     }
   }
