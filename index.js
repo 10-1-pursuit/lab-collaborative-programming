@@ -20,7 +20,7 @@ function sortByStringLength(string) {
 function textScroller(word) {
   let scrolledArr = [];
 
-  let wordArr = word.split("");
+  let wordArr = word.split(""); // this is final
 
   for (let i = 0; i < wordArr.length; i++) {
     wordArr.push(wordArr.shift());
