@@ -1,5 +1,5 @@
 const morseCodeDictionary = require("./morse-code-dictionary.json");
-
+//WORKED ON WITH BETHANY TORRES
 /**
  * Returns an array of all of the words sorted by length, shortest first
  * @param {String[]}  - An array of strings.
