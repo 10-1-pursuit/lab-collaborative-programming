@@ -30,7 +30,14 @@ function textScroller(word) {
  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
  */
-function betweenExtremes() {}
+function betweenExtremes(numbers) {
+  for  (const num of numbers) {
+    if (typeof num !== "number"){
+      return numbers
+    }
+ }
+ return Math.max(...numbers) - Math.min(...numbers);
+}
 
 /**
  * Returns the difference between the largest and smallest number in the array
