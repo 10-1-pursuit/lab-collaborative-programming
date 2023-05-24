@@ -52,7 +52,21 @@ return lastNumber - firstNumber
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+  let morse;
+  let morseCode = []
+  let upperCase = message.toUpperCase();
+let spacelessWord = upperCase.replace(" ","")
+  let singleCharacter = spacelessWord.split("");
+for(let letter of singleCharacter){
+  morseCode.push((dictionary[letter]))
+  morse = morseCode.join(" ")
+  }
+return morse
+}
+
+
+
 
 module.exports = {
   sortByStringLength,
