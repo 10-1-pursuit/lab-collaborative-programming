@@ -29,9 +29,16 @@ function sortByStringLength(arrayOfStrings) {
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller() {
-  let emptyArr = [];
-
+function textScroller(word) {
+  if (word === "") {
+    return [];
+  }
+  const wordPosition = [];
+  for (let i = 0; i < word.length; i++) {
+    const scrollingWord = word.slice(i) + word.slice(0, i)
+    wordPosition.push(scrollingWord);
+  }
+  return wordPosition;
 }
 
 /**
