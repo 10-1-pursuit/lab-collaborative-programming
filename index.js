@@ -11,7 +11,7 @@ function sortByStringLength(strings) {
   return strings.sort((a, b) => a.length - b.length); //compared the lengths of two strings, "a" and "b".
 }
 
-let colors = ["Purple", "Blue", "Red", "Pink"]; //Created "colors" array representing four values
+let colors = ["Purple", "Blue", "Red", "Pink"];
 let sortedColors = sortByStringLength(colors); //This function will sort the colors in the array depending on the legnth
 console.log(sortedColors); //colors sorted based on the length, from shortest to longest
 
@@ -22,35 +22,33 @@ console.log(sortedColors); //colors sorted based on the length, from shortest to
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller(greeting) {
-  let allGreetings = [];
+function textScroller(word) {
+  let scrolledArr = [];
 
-  for (let i = 0; i < greeting.length; i++) {
-    let scrollingGreeting = greeting.slice(i) + greeting.slice(0, i);
-    allGreetings.push(scrollingGreeting);
+  let wordArr = word.split("");
+
+  for (let i = 0; i < wordArr.length; i++) {
+    wordArr.push(wordArr.shift());
+    scrolledArr.push(wordArr.join(""));
   }
-  return allGreetings;
+  return scrolledArr;
 }
-
-let greeting = "Hello";
-let scrollingGreeting = textScroller(greeting);
-console.log(scrollingGreeting);
-
 /**
- * Returns the difference between the largest and smallest number in the array
- * @param {Number[]} numbers - An array of numbers.
+//  * Returns the difference between the largest and smallest number in the array
+  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
- */
+  */
 function betweenExtremes(numbers) {
-  //Math.max() and Math.min()method
-  let largest = Math.max(...numbers);
+  //used Math.max() and Math.min()method
+  const entireNumbers = numbers.every((num) => typeof num === "number");
+  if (!entireNumbers) {
+    return numbers;
+  }
   let smallest = Math.min(...numbers);
+  let largest = Math.max(...numbers);
   let extreme = largest - smallest;
   return extreme;
 }
-let numbers = [8, 4, 10, 2, 6];
-let result = betweenExtremes(numbers);
-console.log(result);
 
 /**
  * Returns the difference between the largest and smallest number in the array
@@ -60,8 +58,19 @@ console.log(result);
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+  const translatedMessage = [];
 
+  for (let i = 0; i < message.length; i++) {
+    const morseCode = message[i].toUpperCase().split("");
+
+    const messageDictionaryCompared = dictionary[morseCode];
+    if (messageDictionaryCompared) {
+      translatedMessage.push(messageDictionaryCompared);
+    }
+  }
+  return translatedMessage.join(" ");
+}
 module.exports = {
   sortByStringLength,
   textScroller,
