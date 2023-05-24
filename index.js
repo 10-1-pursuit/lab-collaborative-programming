@@ -17,7 +17,12 @@ function sortByStringLength(sentence) {
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
 function textScroller(word) {
-  
+  const result = [];
+  for (let i = 0; i < word.length; i++){
+    word = word.substring(1) + word[0];
+    result.push(word);
+  }
+  return result
 }
 
 /**
