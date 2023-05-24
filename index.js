@@ -47,7 +47,18 @@ function betweenExtremes(numbers) {
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator(message, dictionary) {
+  const translatedMsg = []
+  for (let i = 0; i < message.length; i++){
+    const letters = message[i].toUpperCase()
+    const morseCode = dictionary[letters]
+    if (morseCode === undefined){
+      continue;
+    }
+    translatedMsg.push(morseCode)
+  }
+  return translatedMsg.join(" ")
+}
 
 module.exports = {
   sortByStringLength,
