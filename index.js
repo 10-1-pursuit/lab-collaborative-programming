@@ -40,14 +40,8 @@ function textScroller() {
  * @returns {Number} The difference between the largest and smallest number.
  */
 function betweenExtremes(numbers) {
-  // let tempArray = [];
-
-  const originalArr = numbers.every(() => { })
-
   const diff = (numbers) => Math.max(...numbers) - Math.min(...numbers);
-
-
-  return diff(numbers);
+  return diff(numbers) || numbers;
 }
 
 /**
