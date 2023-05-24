@@ -78,7 +78,7 @@ describe("betweenExtremes()", () => {
   });
 });
 
-describe.only("morseCodeTranslator()", () => {
+describe("morseCodeTranslator()", () => {
   test("Should translate text to morse code", () => {
     const actual = morseCodeTranslator("Hello world", morseCodeDictionary);
     const expected = ".... . .-.. .-.. --- .-- --- .-. .-.. -..";
