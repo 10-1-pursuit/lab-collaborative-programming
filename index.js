@@ -17,48 +17,25 @@ function sortByStringLength(words) {
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
 function textScroller(word) {
-let wordCombinations = []
-if(word === ""){
-  return wordCombinations
+  let wordCombinations = [];
+  if (word === "") {
+    return wordCombinations;
+  }
+  let wordArr = word.split("");
+  let firstLetter = wordArr.splice(0, 1);
+  wordArr.push(firstLetter);
+  let reverseWord = wordArr.join("");
+  wordCombinations.push(reverseWord);
+  while (reverseWord !== word) {
+    wordArr = reverseWord.split("");
+    firstLetter = wordArr.splice(0, 1);
+    wordArr.push(firstLetter);
+    reverseWord = wordArr.join("");
+    wordCombinations.push(reverseWord);
+  }
+  return wordCombinations;
 }
-let wordArr = word.split("")
-let firstLetter = wordArr.splice(0,1)
-wordArr.push(firstLetter)
- let reverseWord = wordArr.join("")
-wordCombinations.push(reverseWord)
 
-while(reverseWord !== word){
-  wordArr = reverseWord.split("");
-  firstLetter = wordArr.splice(0,1)
-  wordArr.push(firstLetter)
-  reverseWord = wordArr.join("")
-  wordCombinations.push(reverseWord)
-}
-return wordCombinations
-}
-    
-// function textScroller(word) {
-//   let wordCombinations = []
-//   let comboString=""
-//   let wordArr = word.split("")
-  
-//   for(let i = wordArr.length-1;i>=0;i--){
-//   let index = wordArr[i]
-//   comboString += index
-  
-  
-//   }
-//   wordCombinations.push(comboString)
-//   console.log(wordCombinations)
-//     return wordCombinations
-//   }
-
-  //   let wordsScroller = [];
-  //   let characterArray = word.split("");
-  //   let firstLetter = characterArray.shift();
-  // characterArray.push(firstLetter)
-  // wordsScroller.push(characterArray)
-  //   return wordsScroller;
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
