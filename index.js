@@ -10,7 +10,7 @@ const morseCodeDictionary = require("./morse-code-dictionary.json");
 function sortByStringLength(words) {
 
   const sortByStringLength= (a,b)=>{
-    return element = a-b;
+    return element = a.length-b.length;
   }
   return words.sort(sortByStringLength)
 }
@@ -29,13 +29,27 @@ const string= "Hello"
 function textScroller(word) {
   const scramblerFunc = () => {
     for (i = 0; i < word.length; i++) {
-
-
-      newArray = string.split("");//to split character in array
-      newArray[0] = string[4]//replace first index of new array with last index of string
-      newArray[4] = string[0]//replace  last index of new array with first index of string
+newArray = string.split(""); newArray1 = string.split("");newArray2 = string.split("");
+newArray3 = string.split("");newArray4 = string.split("");//to split array
+newArray[0] = string[4]//change index of string inside array
+   newArray1[1]= string[2]
+   newArray1[0]= string[3]
+   newArray1[3]= string[0]
+   newArray1[4]= string[1]
+   newArray1[2]= string[4]
+      newArray2[0]= string[3]
+      newArray2[1]= string[4]
+      newArray2[2]= string[0]
+      newArray2[3]= string[1]
+      newArray2[4]= string[2]
+        newArray3[0]= string[4]
+        newArray3[1]= string[0]
+        newArray3[2]= string[1]
+        newArray3[3]= string[2]
+        newArray3[4]= string[3]
+        
     }
-    return [newArray.join("")]//to remove the commas and pust back into array
+    return [newArray.join(""),newArray1.join(""),newArray2.join(""),newArray3.join(""),newArray4.join("")]//to remove the commas and put back into array
   }
   return scramblerFunc()
 
@@ -52,15 +66,15 @@ const numbers = [3, 8, 44, -33, 20, 400, 6, 16, 2, 2, 2, 200];
 
 function betweenExtremes(num) {
 
-  for(i=0; i<num.length; i++){
+  for(i=0; i<num.length; i++){//looping through nums array
 
-    return (Math.max(...numbers)-(Math.min(...numbers)))
+    return (Math.max(...numbers)-(Math.min(...numbers)))//Difference of Largest num located and smallest num located
   }
 }
 console.log(betweenExtremes(numbers))
 
 /**
- * Returns the difference between the largest and smallest number in the array
+ * Returns string translated to morse code
  * @param {String} message - A string to translate.
  * @param {Object[]} dictionary - A morse code dictionary ( use the one imported at the top of this file)
  * @returns {Number} The message in morse code
