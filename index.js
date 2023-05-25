@@ -51,6 +51,9 @@ newArray[0] = string[4]//change index of string inside array lines "34-49"
     }
     return [newArray.join(""),newArray1.join(""),newArray2.join(""),newArray3.join(""),newArray4.join("")]//to remove the commas and put back into array
   }
+  if(string === " "){
+    return [];
+  }
   return scramblerFunc()
 
 }
@@ -87,7 +90,22 @@ console.log(betweenExtremes(numbers))
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+
+function morseCodeTranslator(string){
+       
+  for(i=0; i <string.length ;i++){
+    return string.toUpperCase().split("").map(element=>{
+    
+   
+    if(element.toUpperCase().split("")[i] === Object.keys(morseCode) && Object.values(morseCode).join("") === string) {
+
+ 
+   }
+    })
+  }
+};
+
+console.log(morseC("Hello World",morseCode));
 
 module.exports = {
   sortByStringLength,
