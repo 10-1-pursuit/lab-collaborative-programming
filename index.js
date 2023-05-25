@@ -31,7 +31,7 @@ function textScroller(word) {
     for (i = 0; i < word.length; i++) {
 newArray = string.split(""); newArray1 = string.split("");newArray2 = string.split("");
 newArray3 = string.split("");newArray4 = string.split("");//to split array
-newArray[0] = string[4]//change index of string inside array
+newArray[0] = string[4]//change index of string inside array lines "34-49"
    newArray1[1]= string[2]
    newArray1[0]= string[3]
    newArray1[3]= string[0]
@@ -69,6 +69,12 @@ function betweenExtremes(num) {
   for(i=0; i<num.length; i++){//looping through nums array
 
     return (Math.max(...numbers)-(Math.min(...numbers)))//Difference of Largest num located and smallest num located
+  }
+  if(num===""){
+    return [];
+  }
+  if(num.includes("string")){
+    return num
   }
 }
 console.log(betweenExtremes(numbers))
