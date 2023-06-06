@@ -5,7 +5,25 @@ const morseCodeDictionary = require("./morse-code-dictionary.json");
  * @param {String[]}  - An array of strings.
  * @returns {string[]} An array of strings.
  */
-function sortByStringLength() {}
+function sortByStringLength(arrOfStrings) {
+  // let arr = [];
+  for (let string of arrOfStrings) {
+    console.log("New Arr Sorted By Length", arrOfStrings.sort(function (a, b) { return a.length - b.length }))
+
+    if (string != " ")
+      return arrOfStrings
+  }
+}
+// return arrOfStrings.sort(function (a, b) { return a - b })
+
+// return string.sort((a, b){ => a.length - b.length
+// objs.sort((a,b) => a.last_nom - b.last_nom);
+// return arrOfStrings.sort()
+// }
+
+// let string= " " ;
+// return string 
+// }
 
 /**
  * Returns an array of the word in all scrolling positions.
@@ -14,14 +32,38 @@ function sortByStringLength() {}
  * Example: "Hello"
  * [ 'elloH', 'lloHe', 'loHel', 'oHell', 'Hello' ]
  */
-function textScroller() {}
+function textScroller(wordString) {
+  let wordArr = [];
+  for (let word of wordString) {
+    console.log(wordString)
+  }
+  {
+    if (wordString = " ") {
+      return wordArr
+    }
+  }
+  console.log(word)
+
+}
 
 /**
  * Returns the difference between the largest and smallest number in the array
  * @param {Number[]} numbers - An array of numbers.
  * @returns {Number} The difference between the largest and smallest number.
  */
-function betweenExtremes() {}
+// function betweenExtremes(numbers) {
+//   let emptyInput = []
+//  if (numbers= " ") {
+//   return emptyInput
+//  if (numbers.forEach(element => {Number
+  
+//  }); (let eacheElement of numbers) {
+  
+//  }
+//   // if (numbers.every(areNotNumbers( eachElement = Number )=> nonNumbers)) {
+//   // }
+  
+// }
 
 /**
  * Returns the difference between the largest and smallest number in the array
@@ -31,11 +73,11 @@ function betweenExtremes() {}
  * Example: "A new month"
  * .- / -. . .-- / -- --- -. - ....
  */
-function morseCodeTranslator() {}
+function morseCodeTranslator() { }
 
 module.exports = {
   sortByStringLength,
   textScroller,
-  betweenExtremes,
+  // betweenExtremes,
   morseCodeTranslator,
 };
